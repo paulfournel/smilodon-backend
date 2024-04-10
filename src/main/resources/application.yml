@@ -1,0 +1,56 @@
+server.port: 8080
+
+spring:
+  profiles.active: ${stage:dev}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    schemas: public
+
+logbook:
+  filter:
+    enabled: true
+  format.style: curl
+  minimum-status: 200
+
+logging:
+  level:
+    root: info
+    com.fournel.smilodon: debug
+    org.zalando.logbook: TRACE
+
+strava:
+  base-url: https://www.strava.com/api/v3
+  client-id: ${STRAVA_CLIENT_ID}
+  client-secret: ${STRAVA_CLIENT_SECRET}
+
+---
+###### development (local) ######
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smilodon
+    username: postgres
+    password: postgres
+  config:
+    activate:
+      on-profile: dev
+
+smilodon:
+  server: http://localhost:8080
+
+---
+###### development (live-ovh) ######
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  config:
+    activate:
+      on-profile: live-ovh
+
+smilodon:
+  server: https://smilodon.avocados.ovh
