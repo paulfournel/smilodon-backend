@@ -1,7 +1,12 @@
 # Smilodon
 
-This is the backend of the Smilodon project. The objective is to create a decentralized social network for athletes. 
+Strava Meets the Fediverse: How to Go Beyond Proof of Concepts?
+
+I've noticed several enthusiasts dabbling with decentralized versions of Strava, sparking an idea to push these concepts further. I'm looking to ignite a conversation and connect with motivated individuals interested in launching an open-source project centered around a decentralized sports network. To kick things off, I've developed a proof of concept to showcase our potential starting point. If this piques your interest and you're eager to contribute your ideas, skills, or feedback, please drop a comment below. Let's connect and explore how we can turn this vision into reality together.
+
 This project is using the activity pub protocol and therefore is compatible with Fediverse ecosystem.
+
+The frontend is available [here](https://github.com/paulfournel/smilodon-frontend).
 
 ## Features
 
